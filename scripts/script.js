@@ -16,23 +16,23 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
   if (playerSelection === "rock" && computerSelection === "Paper") {
-    return "You lose! Paper beats Rock.";
+    return "You lose! Paper beats rock.";
   } else if (playerSelection === "rock" && computerSelection === "Scissors") {
-    return "You win! Rock beats Scissors.";
+    return "You win! Rock beats scissors.";
   } else if (playerSelection === "paper" && computerSelection === "Rock") {
-    return "You win! Paper beats Rock.";
+    return "You win! Paper beats rock.";
   } else if (playerSelection === "paper" && computerSelection === "Scissors") {
     return "You lose! Scissors beats Paper.";
   } else if (playerSelection === "scissors" && computerSelection === "Paper") {
-    return "You Win! Scissors beats Paper";
+    return "You Win! Scissors beats paper.";
   } else if (playerSelection === "scissors" && computerSelection === "Rock") {
-    return "You lose! Rock beats Scissors";
+    return "You lose! Rock beats scissors.";
   } else if (
     playerSelection != "scissors" ||
     playerSelection != "rock" ||
     playerSelection != "scissors"
   ) {
-    return "Please type rock, paper, or scissors.";
+    return "Please type paper, scissors, or rock.";
   } else return "Draw!";
 }
 
