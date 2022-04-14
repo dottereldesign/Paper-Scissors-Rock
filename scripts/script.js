@@ -15,21 +15,23 @@ function computerPlay() {
 // Create a function called playRound with two paremeters; playerSelection and computerSelection, that will return a string to declare the winner of a round.
 
 function playRound(playerSelection, computerSelection) {
+  playerSelection = playerSelection.toLowerCase();
   if (playerSelection === "rock" && computerSelection === "Paper") {
-    return "You lose!";
+    return "You lose! Paper beats Rock.";
   } else if (playerSelection === "rock" && computerSelection === "Scissors") {
-    return "You win!";
+    return "You win! Rock beats Scissors.";
   } else if (playerSelection === "paper" && computerSelection === "Rock") {
-    return "You win!";
+    return "You win! Paper beats Rock.";
   } else if (playerSelection === "paper" && computerSelection === "Scissors") {
-    return "You lose!";
+    return "You lose! Scissors beats Paper.";
   } else if (playerSelection === "scissors" && computerSelection === "Paper") {
-    return "You Win!";
+    return "You Win! Scissors beats Paper";
   } else if (playerSelection === "scissors" && computerSelection === "Rock") {
-    return "You lose!";
+    return "You lose! Rock beats Scissors";
   } else return "Draw!";
 }
 
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// Create a function called game that calls the playRound function inside of it to play a 5 round game that keeps score and reports a winnor loser at the end.
+
+function game() {}
+console.log(game());
