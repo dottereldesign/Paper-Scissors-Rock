@@ -14,26 +14,42 @@ function computerPlay() {
 // The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
 
 function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase();
-  if (playerSelection === "rock" && computerSelection === "Paper") {
-    return "You lose! Paper beats rock.";
-  } else if (playerSelection === "rock" && computerSelection === "Scissors") {
-    return "You win! Rock beats scissors.";
-  } else if (playerSelection === "paper" && computerSelection === "Rock") {
-    return "You win! Paper beats rock.";
-  } else if (playerSelection === "paper" && computerSelection === "Scissors") {
-    return "You lose! Scissors beats Paper.";
-  } else if (playerSelection === "scissors" && computerSelection === "Paper") {
-    return "You Win! Scissors beats paper.";
-  } else if (playerSelection === "scissors" && computerSelection === "Rock") {
-    return "You lose! Rock beats scissors.";
+  playerSelection =
+    playerSelection.charAt(0).toUpperCase() +
+    playerSelection.slice(1).toLowerCase();
+
+  let youLose = `You lose! ${computerSelection} beats ${playerSelection}`;
+  let youWin = `You win! ${playerSelection} beats ${computerSelection}`;
+  let draw = "Draw!";
+
+  if (playerSelection === "Rock" && computerSelection === "Paper") {
+    return youLose;
+  } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+    return youWin;
+  } else if (playerSelection === "Rock" && computerSelection === "Rock") {
+    return draw;
+  } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+    return youWin;
+  } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+    return youLose;
+  } else if (playerSelection === "Paper" && computerSelection === "Paper") {
+    return draw;
+  } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+    return youWin;
+  } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+    return youLose;
   } else if (
-    playerSelection != "scissors" ||
-    playerSelection != "rock" ||
-    playerSelection != "scissors"
+    playerSelection === "Scissors" &&
+    computerSelection === "Scissors"
+  ) {
+    return draw;
+  } else if (
+    playerSelection != "Paper" ||
+    playerSelection != "Rock" ||
+    playerSelection != "Scissors"
   ) {
     return "Please type paper, scissors, or rock.";
-  } else return "Draw!";
+  }
 }
 
 // const playerSelection = "rock";
