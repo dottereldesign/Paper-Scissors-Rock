@@ -24,6 +24,7 @@ function playRound(playerSelection, computerSelection) {
   let youLose = `You lose! ${computerSelection} beats ${playerSelection}`;
   let youWin = `You win! ${playerSelection} beats ${computerSelection}`;
   let draw = "Draw!";
+  let wrongMove = "Please type paper, scissors, or rock.";
 
   if (playerSelection === "Rock" && computerSelection === "Paper") {
     computerScore += 1;
@@ -57,22 +58,21 @@ function playRound(playerSelection, computerSelection) {
     playerSelection != "Rock" ||
     playerSelection != "Scissors"
   ) {
-    return "Please type paper, scissors, or rock.";
+    return wrongMove;
   }
 }
 
-// const playerSelection = "rock";
-// const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
-
-// Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
+// Creates the game function and runs a for loop of 5 rounds.
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    const playerSelection = window.prompt("Paper, scissors, or rock?");
-    const computerSelection = computerPlay();
+    playerSelection = window.prompt("Paper, scissors, or rock?");
+    computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
   }
 }
 
-console.log(game());
+// Calls the game function to run it and displays score in the console.
+game();
+console.log(playerScore, computerScore);
+console.log(wrongMove);
